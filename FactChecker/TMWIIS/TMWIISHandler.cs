@@ -40,9 +40,9 @@ namespace FactChecker.TMWIIS
                     int targetPassageOccurence = WordOccurrence(knowledgeGraphItem.t, passages[i]);
                     int targetDocumentOccurence = WordOccurrence(knowledgeGraphItem.t, article.Text);
 
-                    double evidenceSource = EvidenceCalculator(passageLength, article.Lenght, article.UniqueLenght, sourcePassageOccurence, sourceDocumentOccurence);
-                    double evidenceRelation = EvidenceCalculator(passageLength, article.Lenght, article.UniqueLenght, relationPassageOccurence, relationDocumentOccurence);
-                    double evidenceTarget = EvidenceCalculator(passageLength, article.Lenght, article.UniqueLenght, targetPassageOccurence, targetDocumentOccurence);
+                    double evidenceSource = EvidenceCalculator(passageLength, article.UniqueLenght, sourcePassageOccurence, sourceDocumentOccurence);
+                    double evidenceRelation = EvidenceCalculator(passageLength, article.UniqueLenght, relationPassageOccurence, relationDocumentOccurence);
+                    double evidenceTarget = EvidenceCalculator(passageLength, article.UniqueLenght, targetPassageOccurence, targetDocumentOccurence);
                     double passageScore = evidenceSource * evidenceRelation * evidenceTarget;
                     rankedPassages.Add(new TMWIISItem(passageScore, passages[i], article.Link));
                 }
