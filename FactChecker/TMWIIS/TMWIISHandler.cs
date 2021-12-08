@@ -55,7 +55,7 @@ namespace FactChecker.TMWIIS
             PassageRetrievalHandler pr = new PassageRetrievalHandler(text);
             return pr.GetPassages();
         }
-        public double EvidenceCalculator(int passageLength, int articleLength, int uniqueLength, int passageOccurrence, int documentOccurrence)
+        public double EvidenceCalculator(int passageLength, int uniqueLength, int passageOccurrence, int documentOccurrence)
         {
             double passageSource, documentSource, collectionSource;
             double lambda1 = 0.4, lambda2 = 0.4, lambda3 = 0.2;
